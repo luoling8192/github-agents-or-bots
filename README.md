@@ -2,23 +2,21 @@
 
 Separate automated accounts from people in GitHub contributor lists.
 
+[![Install from Greasy Fork](https://img.shields.io/badge/Install-Greasy%20Fork-990000?logo=tampermonkey&logoColor=white)](https://greasyfork.org/scripts/596743)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-
-> The recommended Greasy Fork install link will appear here after the first
-> release is published. Until then, use the direct GitHub installation below.
 
 ## Install
 
 1. Install a userscript manager:
    [Tampermonkey](https://www.tampermonkey.net/) or
    [Violentmonkey](https://violentmonkey.github.io/).
-2. Install the userscript directly from
-   [GitHub](https://raw.githubusercontent.com/luoling8192/github-automated-contributors/main/github-agents-or-bots.user.js).
+2. [Install the script from Greasy Fork](https://greasyfork.org/scripts/596743).
 3. Confirm the installation, then reload GitHub.
 
-The Greasy Fork release will be the recommended installation source because it
-provides a dedicated script page, update history, and an easier installation
-flow. The raw GitHub link will remain available as a fallback.
+Greasy Fork is the recommended installation source because it provides a
+dedicated script page, update history, and an easier installation flow. You can
+also [install directly from GitHub](https://raw.githubusercontent.com/luoling8192/github-automated-contributors/main/github-agents-or-bots.user.js)
+as a fallback.
 
 ## Preview
 
