@@ -3,6 +3,8 @@
 A userscript that separates automated contributors from people on GitHub
 repository homepages and contributor graphs.
 
+![GitHub repository sidebar with separate Contributors and Agents or bots panels](assets/preview.png)
+
 ## Install
 
 1. Install a userscript manager such as Tampermonkey.
@@ -18,6 +20,11 @@ repository homepages and contributor graphs.
 - Uses GitHub's own contributor data endpoint to avoid fighting its virtualized
   list and causing layout flicker.
 - Preserves the relative order and original rank of contributors.
+
+On repository homepages, the script only groups accounts already shown in
+GitHub's Contributors preview. GitHub does not load the complete contributor
+list there, so agents or bots outside that preview will not appear in the
+separate panel. Use the contributor graph to view the complete grouping.
 
 No token, cross-site request, remote dependency, or privileged userscript grant
 is required.
