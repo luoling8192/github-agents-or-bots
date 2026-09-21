@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name         GitHub Agents or bots panel
+// @name         GitHub Automated Contributors
 // @namespace    github-sidebar-agents-or-bots
-// @version      1.2.0
-// @description  Separate agents and bots on repository homepages and contributor graphs.
-// @homepageURL  https://github.com/luoling8192/github-agents-or-bots
-// @supportURL   https://github.com/luoling8192/github-agents-or-bots/issues
-// @downloadURL  https://raw.githubusercontent.com/luoling8192/github-agents-or-bots/main/github-agents-or-bots.user.js
-// @updateURL    https://raw.githubusercontent.com/luoling8192/github-agents-or-bots/main/github-agents-or-bots.user.js
+// @version      1.2.1
+// @description  Separate automated accounts from people in GitHub contributor lists.
+// @homepageURL  https://github.com/luoling8192/github-automated-contributors
+// @supportURL   https://github.com/luoling8192/github-automated-contributors/issues
+// @downloadURL  https://raw.githubusercontent.com/luoling8192/github-automated-contributors/main/github-agents-or-bots.user.js
+// @updateURL    https://raw.githubusercontent.com/luoling8192/github-automated-contributors/main/github-agents-or-bots.user.js
 // @match        https://github.com/*
 // @run-at       document-idle
 // @grant        none
@@ -175,7 +175,7 @@
           state.contributors = contributors;
           const bots = contributors.filter(entry => entry.login && isBotLogin(entry.login));
           humans.textContent = `Contributors (${contributors.length - bots.length})`;
-          agents.textContent = `Agents or bots (${bots.length})`;
+          agents.textContent = `Automated contributors (${bots.length})`;
           status.remove();
           const itemClass = list.firstElementChild?.className || '';
           agentList.replaceChildren(...bots.map(entry => makeAgentCard(entry, itemClass)));
@@ -237,17 +237,17 @@
       panel.className = section.className;
       panel.setAttribute(panelAttribute, '');
       panel.setAttribute('role', 'region');
-      panel.setAttribute('aria-label', 'Agents or bots');
+      panel.setAttribute('aria-label', 'Automated contributors');
       const title = heading.cloneNode(false);
       title.removeAttribute('id');
-      title.textContent = 'Agents or bots ';
+      title.textContent = 'Automated contributors ';
       const nativeCount = heading.querySelector('[data-component="CounterLabel"], .Counter');
       const count = nativeCount ? nativeCount.cloneNode(false) : document.createElement('span');
       count.removeAttribute('id');
       count.removeAttribute('aria-hidden');
       if (!nativeCount) count.className = 'Counter';
       count.textContent = String(bots.length);
-      count.title = 'Agents or bots among the contributors shown on this page';
+      count.title = 'Automated accounts among the contributors shown on this page';
       title.append(count);
       const botList = list.cloneNode(false);
       botList.removeAttribute('id');

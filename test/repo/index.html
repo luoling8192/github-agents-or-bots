@@ -82,7 +82,7 @@ document.querySelector('#run').onclick = async () => {
     document.dispatchEvent(new Event('soft-nav:render'));
     await wait();
     const controls = () => document.querySelector('.gh-bots-controls');
-    assert(controls().querySelectorAll('button')[1].textContent === 'Agents or bots (2)', 'Graphs all=1 loads the complete agent list');
+    assert(controls().querySelectorAll('button')[1].textContent === 'Automated contributors (2)', 'Graphs all=1 loads the complete automated contributor list');
     assert(sidebar.querySelectorAll('[data-gh-bots-filtered]').length === 2, 'Graphs default excludes agents');
     controls().querySelectorAll('button')[1].click();
     assert(sidebar.querySelector('ul[class*="chartList"]').hasAttribute('data-gh-bots-list-hidden'), 'Agents group hides the virtualized native list as one unit');
